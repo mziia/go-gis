@@ -1,4 +1,4 @@
-package geogoth
+package gogis
 
 // MultiPoint ...
 type MultiPoint struct {

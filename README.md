@@ -1,6 +1,6 @@
-# geogoth
+# gogis
 
-> GeoGoth is a package for creating geojson using golang language 
+> gogis is a package for creating geojson using golang language 
 
 
 ## Contents
@@ -19,16 +19,16 @@
 
 Download and install:
 ```sh
-$ go get github.com/mziia/geogoth
+$ go get github.com/mziia/gogis
 ```
 Update: 
 ```sh
-$ go get -u github.com/mziia/geogoth
+$ go get -u github.com/mziia/gogis
 ```
 
 Import: 
 ```go
-import "github.com/mziia/geogoth"
+import "github.com/mziia/gogis"
 ```
 
 ## Quick start
@@ -40,21 +40,21 @@ package main
 import (
 	"fmt"
 
-	"github.com/mziia/geogoth"
+	"github.com/mziia/gogis"
 )
 
 func main() {
-	collection := geogoth.NewFeatureCollection()
+	collection := gogis.NewFeatureCollection()
 
-	point1 := geogoth.NewPoint([]float64{37.6175, 55.752})  // lon, lat
-	point2 := geogoth.NewPoint([]float64{37.6048, 55.7649}) // y, x
+	point1 := gogis.NewPoint([]float64{37.6175, 55.752})  // lon, lat
+	point2 := gogis.NewPoint([]float64{37.6048, 55.7649}) // y, x
 
-	feature1 := geogoth.NewFeature()
+	feature1 := gogis.NewFeature()
 	feature1.SetProperty("локация", "Кремль")
 	feature1.SetID("0001")
 	feature1.SetGeometry(point1)
 
-	feature2 := geogoth.NewFeature()
+	feature2 := gogis.NewFeature()
 	feature2.SetProperty("локация", "Тверская")
 	feature2.SetID("0002")
 	feature2.SetGeometry(point2)
@@ -63,8 +63,8 @@ func main() {
 	collection.AddFeature(feature2)
 
 	// The order of parameters' transfer does not matter
-	fmt.Println("Distance between Points (feature1 - feature2): ", geogoth.Distance(feature1, feature2))
-	fmt.Println("Distance between Points (feature2 - feature1): ", geogoth.Distance(feature2, feature1))
+	fmt.Println("Distance between Points (feature1 - feature2): ", gogis.Distance(feature1, feature2))
+	fmt.Println("Distance between Points (feature2 - feature1): ", gogis.Distance(feature2, feature1))
 
 }
 ```
@@ -86,11 +86,11 @@ package main
 import (
 	"fmt"
 
-	"github.com/mziia/geogoth"
+	"github.com/mziia/gogis"
 )
 
 func main() {
-	mu1 := geogoth.NewMultiPolygon([][][][]float64{
+	mu1 := gogis.NewMultiPolygon([][][][]float64{
 
 		[][][]float64{
 			[][]float64{
@@ -111,12 +111,12 @@ func main() {
 				[]float64{37.677955627441406, 55.82404473410693},
 				[]float64{37.63298034667969, 55.789121984291626}}}})
 
-	feature1 := geogoth.NewFeature()
+	feature1 := gogis.NewFeature()
 	feature1.SetProperty("MPolyg", "[][][]")
 	feature1.SetID("0001")
 	feature1.SetGeometry(mu1)
 
-	mu2 := geogoth.NewMultiPolygon([][][][]float64{
+	mu2 := gogis.NewMultiPolygon([][][][]float64{
 
 		[][][]float64{
 			[][]float64{
@@ -136,12 +136,12 @@ func main() {
 				[]float64{37.58422851562499, 55.840434111266205},
 				[]float64{37.513160705566406, 55.82250184886082}}}})
 
-	feature2 := geogoth.NewFeature()
+	feature2 := gogis.NewFeature()
 	feature2.SetProperty("MPolyg", "[][][]")
 	feature2.SetID("0002")
 	feature2.SetGeometry(mu2)
 
-	fmt.Println("Distance MultiPolygon -  MultiPolygon ( feature1, feature2 ):  ", geogoth.Distance(feature1, feature2))
+	fmt.Println("Distance MultiPolygon -  MultiPolygon ( feature1, feature2 ):  ", gogis.Distance(feature1, feature2))
 
 }
 
@@ -165,11 +165,11 @@ package main
 import (
 	"fmt"
 
-	"github.com/mziia/geogoth"
+	"github.com/mziia/gogis"
 )
 
 func main() {
-	linestr := geogoth.NewLineString([][]float64{
+	linestr := gogis.NewLineString([][]float64{
 		[]float64{37.566375732421875, 55.761702090644896},
 		[]float64{37.58800506591796, 55.74856460562653},
 		[]float64{37.58491516113281, 55.72981671057788},
@@ -179,12 +179,12 @@ func main() {
 		[]float64{37.61272430419922, 55.70100085220915},
 	})
 
-	feature := geogoth.NewFeature()
+	feature := gogis.NewFeature()
 	feature.SetProperty("Лайнстринг", "Йеп")
 	feature.SetID("ftr")
 	feature.SetGeometry(linestr)
 
-	lengths := geogoth.LineStringLength(feature)
+	lengths := gogis.LineStringLength(feature)
 	length := feature.Length()
 
 	fmt.Println("Length of Linestring: ", lengths)

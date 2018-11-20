@@ -1,4 +1,4 @@
-package geogoth
+package gogis
 
 // MultiPolygon ...
 type MultiPolygon struct {

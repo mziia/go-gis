@@ -1,4 +1,4 @@
-package geogoth
+package gogis
 
 // Polygon ...
 type Polygon struct {

@@ -1,4 +1,4 @@
-package geogoth
+package gogis
 
 // Point ...
 type Point struct {

@@ -1,4 +1,4 @@
-package geogoth
+package gogis
 
 // Objects struct for geo objects
 var Objects struct {

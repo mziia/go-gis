@@ -1,4 +1,4 @@
-package geogoth
+package gogis
 
 // GeometryType тип для констант - типов геометрии
 type GeometryType string

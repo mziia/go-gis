@@ -1,4 +1,4 @@
-package geogoth
+package gogis
 
 // Length counts lenght of geo object
 func (feature *Feature) Length() float64 {

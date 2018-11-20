@@ -1,4 +1,4 @@
-package geogoth
+package gogis
 
 // Distance retern between two given geo objects
 func Distance(feature1, feature2 *Feature) float64 {

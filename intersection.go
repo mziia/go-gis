@@ -1,4 +1,4 @@
-package geogoth
+package gogis
 
 // PointPointIntersection ...
 func PointPointIntersection(p1 Point, p2 Point) bool {

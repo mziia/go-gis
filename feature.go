@@ -1,4 +1,4 @@
-package geogoth
+package gogis
 
 // Feature ...
 type Feature interface {

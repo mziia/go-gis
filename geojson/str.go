@@ -1,4 +1,4 @@
-package geogoth
+package gogis
 
 // Ftrs ...
 var Ftrs struct {

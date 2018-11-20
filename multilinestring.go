@@ -1,4 +1,4 @@
-package geogoth
+package gogis
 
 // MultiLineString ...
 type MultiLineString struct {

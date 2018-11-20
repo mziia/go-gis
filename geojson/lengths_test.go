@@ -1,7 +1,7 @@
-package geogoth_test
+package gogis_test
 
 import (
-	geogoth "geogoth/geojson"
+	gogis "gogis/geojson"
 	"testing"
 
 	assert "github.com/blendlabs/go-assert"
@@ -10,7 +10,7 @@ import (
 func TestLineStringLength(t *testing.T) {
 	assert := assert.New(t)
 
-	linestr := geogoth.NewLineString([][]float64{
+	linestr := gogis.NewLineString([][]float64{
 		[]float64{37.566375732421875, 55.761702090644896},
 		[]float64{37.58800506591796, 55.74856460562653},
 		[]float64{37.58491516113281, 55.72981671057788},
@@ -20,12 +20,12 @@ func TestLineStringLength(t *testing.T) {
 		[]float64{37.61272430419922, 55.70100085220915},
 	})
 
-	feature := geogoth.NewFeature()
+	feature := gogis.NewFeature()
 	feature.SetProperty("LineStr", "[][]")
 	feature.SetID("ftr")
 	feature.SetGeometry(linestr)
 
-	lengths := geogoth.LineStringLength(feature)
+	lengths := gogis.LineStringLength(feature)
 	length := feature.Length()
 
 	assert.True(lengths == length)
@@ -36,7 +36,7 @@ func TestLineStringLength(t *testing.T) {
 func TestMultiLineStringLength(t *testing.T) {
 	assert := assert.New(t)
 
-	multLine := geogoth.NewMultiLineString([][][]float64{
+	multLine := gogis.NewMultiLineString([][][]float64{
 		[][]float64{[]float64{37.61911869049072, 55.75634137200424},
 			[]float64{37.626585960388184, 55.75218751578049},
 			[]float64{37.62401103973388, 55.74465148474084}},
@@ -45,12 +45,12 @@ func TestMultiLineStringLength(t *testing.T) {
 			[]float64{37.6255989074707, 55.74665640434626},
 			[]float64{37.62989044189453, 55.74503798328292}}})
 
-	feature := geogoth.NewFeature()
+	feature := gogis.NewFeature()
 	feature.SetProperty("MLineStr", "[][][]")
 	feature.SetID("ftr")
 	feature.SetGeometry(multLine)
 
-	lengths := geogoth.MultiLineStringLength(feature)
+	lengths := gogis.MultiLineStringLength(feature)
 	length := feature.Length()
 
 	assert.True(lengths == length)
@@ -61,7 +61,7 @@ func TestMultiLineStringLength(t *testing.T) {
 func TestPolygonLength(t *testing.T) {
 	assert := assert.New(t)
 
-	polyg := geogoth.NewPolygon([][][]float64{
+	polyg := gogis.NewPolygon([][][]float64{
 		[][]float64{
 			[]float64{37.470245361328125, 55.80706963076952},
 			[]float64{37.63023376464844, 55.62993418221071},
@@ -74,12 +74,12 @@ func TestPolygonLength(t *testing.T) {
 			[]float64{37.57598876953125, 55.79742138660978},
 			[]float64{37.53822326660156, 55.76884856927786}}})
 
-	feature := geogoth.NewFeature()
+	feature := gogis.NewFeature()
 	feature.SetProperty("Polyg", "[][][]")
 	feature.SetID("ftr")
 	feature.SetGeometry(polyg)
 
-	lengths := geogoth.PolygonLength(feature)
+	lengths := gogis.PolygonLength(feature)
 	length := feature.Length()
 
 	assert.True(lengths == length)
@@ -90,7 +90,7 @@ func TestPolygonLength(t *testing.T) {
 func TestMultipolygonLength(t *testing.T) {
 	assert := assert.New(t)
 
-	multipol := geogoth.NewMultiPolygon([][][][]float64{
+	multipol := gogis.NewMultiPolygon([][][][]float64{
 
 		[][][]float64{
 			[][]float64{
@@ -111,12 +111,12 @@ func TestMultipolygonLength(t *testing.T) {
 				[]float64{37.60414123535156, 55.78062774182665},
 				[]float64{37.57427215576172, 55.74856460562653}}}})
 
-	feature := geogoth.NewFeature()
+	feature := gogis.NewFeature()
 	feature.SetProperty("Polyg", "[][][]")
 	feature.SetID("ftr")
 	feature.SetGeometry(multipol)
 
-	lengths := geogoth.MultipolygonLength(feature)
+	lengths := gogis.MultipolygonLength(feature)
 	length := feature.Length()
 
 	assert.True(lengths == length)
