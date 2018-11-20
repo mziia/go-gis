@@ -1,6 +1,8 @@
 package geogoth
 
-import "math"
+import (
+	"math"
+)
 
 // MinDistance searches for the smallest distance
 func MinDistance(distarr []float64) float64 {
@@ -93,15 +95,15 @@ func PIPJordanCurveTheorem(py, px float64, pol interface{}) bool {
 
 }
 
-// // PointInPolygon ...
-// func PointInPolygon(feature1, feature2 *Feature) bool {
+// PointInPolygon ...
+func PointInPolygon(feature1, feature2 *Feature) bool {
 
-// 	py, px := GetPointCoordinates(feature1) // Coords of Point
-// 	pol := feature2.Geom.Coordinates
+	py, px := GetPointCoordinates(feature1) // Coords of Point
+	pol := feature2.Geom.Coordinates
 
-// 	return PIPJordanCurveTheorem(py, px, pol)
+	return PIPJordanCurveTheorem(py, px, pol)
 
-// }
+}
 
 // LineLineIntersection returns true if lines intersectd; false if lines do not intersect
 // Algorithm from https://ideone.com/PnPJgb
