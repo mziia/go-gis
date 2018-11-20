@@ -1,4 +1,4 @@
-package geogoth
+package gogis
 
 var Ftrs struct {
 	Feature1  *Feature

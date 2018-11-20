@@ -1,4 +1,4 @@
-package geogoth
+package gogis
 
 // LineStringLength counts lenght of LineString
 func LineStringLength(feature *Feature) float64 {

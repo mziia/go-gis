@@ -1,4 +1,4 @@
-package geogoth
+package gogis
 
 // NewPoint create Point with given coordinates
 func NewPoint(coordinate []float64) *Geometry {
